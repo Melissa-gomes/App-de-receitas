@@ -23,22 +23,24 @@ function CardsFood() {
   return (
     <div className="Container__Cards">
       { foods && foods.map(({ strMeal, strMealThumb, idMeal }, index) => (
-        <a
-          className="cards__results"
-          key={ strMeal }
-          href={ `/comidas/${idMeal}` }
-          data-testid={ `${index}-recipe-card` }
-        >
-          <div>
-            <img
-              data-testid={ `${index}-card-img` }
-              src={ strMealThumb }
-              width="200"
-              alt="Meal"
-            />
-            <p data-testid={ `${index}-card-name` }>{ strMeal }</p>
-          </div>
-        </a>
+        <div className="individual_card">
+          <a
+            className="cards__results"
+            key={ strMeal }
+            href={ `/comidas/${idMeal}` }
+            data-testid={ `${index}-recipe-card` }
+          >
+            <div>
+              <img
+                data-testid={ `${index}-card-img` }
+                src={ strMealThumb }
+                width="150"
+                alt="Meal"
+              />
+              <p data-testid={ `${index}-card-name` }>{ strMeal }</p>
+            </div>
+          </a>
+        </div>
       ))}
     </div>
   );

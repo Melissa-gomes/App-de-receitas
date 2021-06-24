@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 import { apiFoods } from '../services/Services';
 import recipesContext from '../context/recipesContext';
-
+import './CardsIngredients.css';
 function CardsIngredientsFoods() {
   const [ingredients, setIngredients] = useState([]);
   const [redirect, setRedirect] = useState(false);
@@ -11,7 +11,7 @@ function CardsIngredientsFoods() {
   async function fetchIngredients() {
     const responseIngredients = await apiFoods('list.php?i=list');
     setIngredients(responseIngredients);
-  }
+   }
 
   useEffect(() => {
     fetchIngredients();
@@ -23,9 +23,10 @@ function CardsIngredientsFoods() {
   };
 
   return (
-    <div>
+    <div className="Container__Cards">
       {ingredients && ingredients.map(({ strIngredient }, index) => (
         <button
+          className="individual_card"
           type="button"
           key={ index }
           data-testid={ `${index}-ingredient-card` }

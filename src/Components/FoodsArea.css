@@ -1,10 +1,18 @@
 .select__area {
-  margin-top: 100px;
+  margin-top: 80px;
   width: 100%;
 }
 
 .select__area select {
+  align-items: center;
+  background:white;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
   height: 30px;
-  margin-left: 20px;
-  width: 85%;
+  justify-content: center;
+  margin-left: 100px;
+  text-align: center;
+  width: 150px;
 }

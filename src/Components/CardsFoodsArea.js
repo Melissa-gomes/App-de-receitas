@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { apiFoods } from '../services/Services';
-import './cards.css';
+import './CardsFoodsArea.css';
 
 function CardsFoodsArea({ selectedArea }) {
   const [foodsArea, setFoodsArea] = useState([]);
@@ -12,7 +12,6 @@ function CardsFoodsArea({ selectedArea }) {
     else areaFoods = await apiFoods(`filter.php?a=${selectedArea}`);
     setFoodsArea(areaFoods);
   }
-  console.log(foodsArea);
 
   useEffect(() => {
     fetchFoodsArea();
@@ -21,8 +20,8 @@ function CardsFoodsArea({ selectedArea }) {
   return (
     <div className="Container__Cards">
       { foodsArea && foodsArea.map(({ strMeal, strMealThumb, idMeal }, index) => (
-        <a
-          className="cards__results"
+        <a 
+          className="individual_card"
           key={ strMeal }
           href={ `/comidas/${idMeal}` }
           data-testid={ `${index}-recipe-card` }

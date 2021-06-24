@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 import { apiDrinks } from '../services/Services';
 import recipesContext from '../context/recipesContext';
+import './CardsIngredients.css';
 
 function CardsIngredientsDrinks() {
   const [ingredients, setIngredients] = useState([]);
@@ -23,9 +24,10 @@ function CardsIngredientsDrinks() {
   };
   console.log(ingredients);
   return (
-    <div>
+    <div className="Container__Cards">
       {ingredients && ingredients.map(({ strIngredient1 }, index) => (
         <button
+          className="individual_card"
           type="button"
           key={ index }
           data-testid={ `${index}-ingredient-card` }

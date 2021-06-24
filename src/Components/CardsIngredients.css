@@ -3,16 +3,12 @@
   display: flex;
   flex-wrap: wrap;
   height: 100%;
+  margin-top: 67px;
   overflow: scroll; 
 }
 
-.Container__Cards a {
-  color: black;
-  margin-top: 0;
-  text-decoration: none;
-}
-
 .individual_card {
+  background: #fffafa;
   border: 1px solid rgba(0, 0, 0, 0.6);
   border-radius: 8px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
@@ -22,14 +18,20 @@
   width: 160px;
 }
 
-.individual_card a {
+.individual_card button {
   color: black;
   margin-top: 15px;
   text-decoration: none;
 }
 
+.individual_card img {
+  align-items: center;
+  height: 140px;
+  width: 140px;
+}
+
 .individual_card p {
-  margin-top: 15px;
-  text-decoration: none;
+  font-size: 21px;
+  margin-bottom: 20px;
   word-break: break-word;
 }

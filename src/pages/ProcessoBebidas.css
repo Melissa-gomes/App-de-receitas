@@ -4,7 +4,7 @@
   text-decoration: line-through;
 }
 
-.details__foods {
+.details__drinks {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,28 +12,28 @@
   width: 100%;
 }
 
-.details__foods__img {
+.details__drinks__img {
   height: 270px;
   width: 98%;
 }
 
-.details__foods h4 {
+.details__drinks h4 {
   font-family: Roboto;
   font-size: 28px;
 }
 
-.details__foods ul {
+.details__drinks ul {
   margin: 15px;
 }
 
-.details__foods li {
+.details__drinks checkbox {
   font-size: 18px;
 }
 
-.details__foods h5 {
-  display: flex;
+.details__drinks h5 {
   font-family: Roboto;
   font-size: 24px;
+  display: flex;
   justify-content: center;
   margin: 10px;
 }
@@ -43,30 +43,9 @@
   font-size: 24px;
 }
 
-.caroussel__detail {
-  margin-bottom: 120px;
-}
-
-.caroussel__detail img{
-  border-radius: 8px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
-}
-
-.caroussel__detail p {
-  font-size: 18px;
-  font-weight: 600;
-  text-align: center;
-}
-
-.iframe__detail {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  width: 360px;
-}
-
 .instructions__detail {
   align-items: center;
+  display: flex;
   font-size: 18px;
   justify-content: center;
   margin-bottom: 100px;
@@ -102,7 +81,7 @@
   width: 340px;
 }
 
-.Recipes__Start__Btn {
+.Recipes__Done__Btn {
   background-color: rgb(102, 67, 138);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -117,7 +96,7 @@
   width: 340px;
 }
 
-.Recipes__Start__Btn:hover {
+.Recipes__Done__Btn:hover {
   background-color: rgb(70, 43, 95);
   transition-delay: 10ms;
 }
@@ -139,6 +118,6 @@
   margin: 8px;
 }
 
-.details__foods label {
+.details__drinks label {
   font-size: 20px;
 }

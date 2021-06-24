@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-:checked ~ label {
-  text-decoration: line-through;
-}
-
 .details__foods {
   display: flex;
   flex-direction: column;
@@ -19,7 +15,7 @@
 
 .details__foods h4 {
   font-family: Roboto;
-  font-size: 28px;
+  font-size: 28px;  
 }
 
 .details__foods ul {
@@ -27,7 +23,7 @@
 }
 
 .details__foods li {
-  font-size: 18px;
+  font-size: 18px;  
 }
 
 .details__foods h5 {
@@ -67,9 +63,9 @@
 
 .instructions__detail {
   align-items: center;
+  display: flex;
   font-size: 18px;
   justify-content: center;
-  margin-bottom: 100px;
   margin-left: 30px;
   text-align: justify;
   width: 300px;
@@ -133,12 +129,4 @@
 .loading h1 {
   font-size: 25px;
   text-align: center;
-}
-
-.checkbox {
-  margin: 8px;
-}
-
-.details__foods label {
-  font-size: 20px;
 }

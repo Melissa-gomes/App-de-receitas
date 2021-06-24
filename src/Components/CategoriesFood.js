@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import recipesContext from '../context/recipesContext';
+import './Categories.css';
 
 function CategoriesFoods() {
   const {

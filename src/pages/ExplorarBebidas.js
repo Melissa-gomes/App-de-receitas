@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import { apiDrinks } from '../services/Services';
+import './explorarButtons.css';
 
 function ExplorarBebidad() {
   const [exploreRecipes, setExploreRecipes] = useState('');
@@ -16,7 +17,7 @@ function ExplorarBebidad() {
 
   const isFalse = false;
   return (
-    <div>
+    <div className="background__image">
       <Header text="Explorar Bebidas" search={ isFalse } />
       <div className="container__explore__btn">
         <button

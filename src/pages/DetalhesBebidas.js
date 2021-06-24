@@ -12,6 +12,7 @@ import {
 import shareIcon from '../images/shareIcon.svg';
 import whiteHeartIcon from '../images/whiteHeartIcon.svg';
 import blackHeartIcon from '../images/blackHeartIcon.svg';
+import './DetalhesBebidas.css';
 
 function DetalhesBebidas({ match: { params: { id } }, history }) {
   const [detailDrink, setDetailDrink] = useState([]);
@@ -34,7 +35,9 @@ function DetalhesBebidas({ match: { params: { id } }, history }) {
 
   const zero = 0;
   const six = 6;
-  if (detailDrink && detailDrink.length === zero) return (<h1>Carregando...</h1>);
+  if (detailDrink && detailDrink.length === zero) {
+    return (<div className="loading"><h1>Carregando...</h1></div>);
+  }
 
   const {
     strDrinkThumb,
@@ -114,35 +117,40 @@ function DetalhesBebidas({ match: { params: { id } }, history }) {
   }
 
   return (
-    <div>
+    <div className="details__drinks">
       <img
+        className="details__drinks__img"
         src={ strDrinkThumb }
         data-testid="recipe-photo"
         alt={ strDrink }
         width="200px"
       />
       <h4 data-testid="recipe-title">{ strDrink }</h4>
-      <h5 data-testid="recipe-category">{ strAlcoholic }</h5>
-      <button
-        onClick={ () => setCopyLink(handleClick(history)) }
-        type="button"
-        src={ shareIcon }
-      >
-        <img data-testid="share-btn" src={ shareIcon } alt="share" />
-      </button>
-      {copyLink && <p>Link copiado!</p>}
-      <button
-        type="button"
-        onClick={ !isFavorite ? favoriteRecipes : allRecipesFavorite }
-        src={ !isFavorite ? whiteHeartIcon : blackHeartIcon }
-      >
-        <img
-          data-testid="favorite-btn"
+      <h6 data-testid="recipe-category"><i>{ strAlcoholic }</i></h6>
+      <div className="div-buttons">
+        <button
+          className="share-btn"
+          onClick={ () => setCopyLink(handleClick(history)) }
+          type="button"
+          src={ shareIcon }
+        >
+          <img data-testid="share-btn" src={ shareIcon } alt="share" />
+        </button>
+        {copyLink && <p>Link copiado!</p>}
+        <button
+          className="heart-btn"
+          type="button"
+          onClick={ !isFavorite ? favoriteRecipes : allRecipesFavorite }
           src={ !isFavorite ? whiteHeartIcon : blackHeartIcon }
-          alt="share"
-        />
-      </button>
-      <h6><b>Ingredientes</b></h6>
+        >
+          <img
+            data-testid="favorite-btn"
+            src={ !isFavorite ? whiteHeartIcon : blackHeartIcon }
+            alt="share"
+          />
+        </button>
+      </div>
+      <h5><b>Ingredients</b></h5>
       <ul>
         {(ingredientsListDrinks(detail)).map((ingredient, index) => (
           <li key="drinks" data-testid={ `${index}-ingredient-name-and-measure` }>
@@ -150,10 +158,10 @@ function DetalhesBebidas({ match: { params: { id } }, history }) {
           </li>
         ))}
       </ul>
-      <h6>{ strCategory }</h6>
-      <p data-testid="instructions">{ strInstructions }</p>
-      <p>Recomendados</p>
-      <div>
+      <h5><b>{ strCategory }</b></h5>
+      <p className="instructions__detail" data-testid="instructions">{ strInstructions }</p>
+      <h5><b>Recomendados</b></h5>
+      <div className="caroussel__detail">
         <Slider { ...settings }>
           {recomendedFood
             && recomendedFood.map(({ strMealThumb, strMeal }, index) => (
@@ -163,7 +171,7 @@ function DetalhesBebidas({ match: { params: { id } }, history }) {
                   className={ { visibility: 'hidden !important' } }
                   src={ strMealThumb }
                   alt={ index }
-                  width="50px"
+                  width="140px"
                 />
                 <p data-testid={ `${index}-recomendation-title` }>{ strMeal }</p>
               </div>

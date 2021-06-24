@@ -1,13 +1,19 @@
-body {
+.login__container {
+  align-items: center;
   background-image: url('https://lh3.googleusercontent.com/YGJ77qN9KiwctZgfqV8Bf3hNo0rZvcFaPKDTkvtS6kVbtwyCS80Pm6dpXzJCCLZE1Q');
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
 }
 
 .wrapper__Login {
   align-items: center;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 80px;
 }
 
 .logoRocketFood {

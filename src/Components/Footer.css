@@ -1,0 +1,32 @@
+.footer {
+  align-items: center;
+  background-color: rgb(102, 67, 138);
+  border-radius: 4px;
+  bottom: 0px;
+  display: flex;
+  height: 70px;
+  justify-content: space-around;
+  left: 0px;
+  position: fixed;
+  top: 570px;
+  width: 100%;
+}
+
+.footer a {
+  margin-right: 45px;
+  margin-top: 4px;
+  width: 40px;
+}
+
+.footer__img {
+  background-color:rgb(185, 155, 229);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  height: 54px;
+  width: 54px;
+}
+
+.footer__img img {
+  margin-left: 5px;
+  margin-top: 2px;
+}

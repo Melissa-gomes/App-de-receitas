@@ -33,7 +33,9 @@ function ProcessoComidas({ match: { params: { id } }, history }) {
     fetchFood();
   }, []);
 
-  if (foodInProgress && foodInProgress.length === zero) return (<h1>Carregando...</h1>);
+  if (foodInProgress && foodInProgress.length === zero) {
+    return (<div className="loading"><h1>Carregando...</h1></div>);
+  }
 
   const {
     strMealThumb,
@@ -78,42 +80,46 @@ function ProcessoComidas({ match: { params: { id } }, history }) {
   }
 
   return (
-    <div>
-      <p>comidas in processo</p>
+    <div className="details__foods">
       <img
+        className="details__foods__img"
         src={ strMealThumb }
         alt={ strMeal }
         data-testid="recipe-photo"
         width="200px"
       />
       <h4 data-testid="recipe-title">{ strMeal }</h4>
-      <button
-        data-testid="share-btn"
-        type="button"
-        onClick={ () => setCopyLink(handleClick()) }
-        src={ shareIcon }
-      >
-        <img
+      <h6 data-testid="recipe-category"><i>{ strCategory }</i></h6>
+      <div className="div-buttons">
+        <button
+          className="share-btn"
+          data-testid="share-btn"
+          type="button"
+          onClick={ () => setCopyLink(handleClick()) }
           src={ shareIcon }
-          alt="share"
-          width="30px"
-        />
-      </button>
-      { copyLink && <p>Link copiado!</p> }
-      <button
-        data-testid="favorite-btn"
-        type="button"
-        src={ !isFavorite ? whiteHeartIcon : blackHeartIcon }
-        onClick={ !isFavorite ? favoriteRecipes : allRecipesFavorite }
-      >
-        <img
+        >
+          <img
+            src={ shareIcon }
+            alt="share"
+            width="30px"
+          />
+        </button>
+        { copyLink && <p>Link copiado!</p> }
+        <button
+          className="heart-btn"
+          data-testid="favorite-btn"
+          type="button"
           src={ !isFavorite ? whiteHeartIcon : blackHeartIcon }
-          alt="whiteHeart"
-          width="50px"
-        />
-      </button>
-      <h6 data-testid="recipe-category">{ strCategory }</h6>
-      <h6><b>Ingredientes</b></h6>
+          onClick={ !isFavorite ? favoriteRecipes : allRecipesFavorite }
+        >
+          <img
+            src={ !isFavorite ? whiteHeartIcon : blackHeartIcon }
+            alt="whiteHeart"
+            width="30px"
+          />
+        </button>
+      </div>
+      <h5><b>Ingredients</b></h5>
       <ul>
         { (ingredientsListMeals(detail))
           .map(
@@ -123,6 +129,7 @@ function ProcessoComidas({ match: { params: { id } }, history }) {
                 data-testid="ingredient-step"
               >
                 <input
+                  className="checkbox"
                   id={ ingredient }
                   type="checkbox"
                   key={ index }
@@ -136,11 +143,17 @@ function ProcessoComidas({ match: { params: { id } }, history }) {
             ),
           ) }
       </ul>
-      <h6><b>Instructions</b></h6>
-      <p data-testid="instructions">{ strInstructions }</p>
+      <h5><b>Instructions</b></h5>
+      <p
+        className="instructions__detail"
+        data-testid="instructions"
+      >
+        { strInstructions }
+      </p>
       <button
         type="button"
         data-testid="finish-recipe-btn"
+        className="Recipes__Start__Btn"
       >
         Finalizar Receita
       </button>

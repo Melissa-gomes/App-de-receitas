@@ -1,0 +1,32 @@
+.Container__Category__Btns {
+  align-items: center;
+  background: #fffafa;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 65px;
+  padding: 8px;
+  width: 100%;
+}
+
+.Container__Category__Btns button {
+  background-color: rgba(102, 67, 138, 0.8);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  height: 42px;
+  margin: 5px;
+  max-width: 102px;
+  width: 102px;
+  word-break: keep-all;
+}
+
+.Container__Category__Btns button:hover {
+  background-color: rgb(102, 67, 138);
+  transition-delay: 10ms;
+}
+
+.Container__Category__Btns button:active{
+  background-color: rgb(102, 67, 138);
+}

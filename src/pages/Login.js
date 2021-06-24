@@ -28,43 +28,46 @@ function Login() {
   };
 
   return (
-    <div className="wrapper__Login">
-      <img
-        className="logoRocketFood"
-        alt="imagem do logo"
-        src={ logoRocketFood }
-      />
-      <form>
-        <input
-          type="email"
-          name="email"
-          className="inputLogin"
-          value={ email }
-          placeholder="Digite seu Email"
-          data-testid="email-input"
-          onChange={ ({ target }) => setEmail(target.value) }
-          autoCorrect="off"
+    <div className="login__container">
+      <div className="wrapper__Login">
+        <img
+          className="logoRocketFood"
+          alt="imagem do logo"
+          src={ logoRocketFood }
         />
-        <input
-          type="password"
-          className="inputLogin"
-          name="password"
-          value={ password }
-          placeholder="Digite sua Senha"
-          data-testid="password-input"
-          onChange={ ({ target }) => setPassword(target.value) }
-        />
-        <button
-          type="button"
-          data-testid="login-submit-btn"
-          className="button"
-          disabled={ isDisable }
-          onClick={ handleClick }
-        >
-          Entrar
-        </button>
-        { redirect && <Redirect to="/comidas" />}
-      </form>
+        <form>
+          <input
+            type="email"
+            name="email"
+            autocomplete="off"
+            className="inputLogin"
+            value={ email }
+            placeholder="Digite seu Email"
+            data-testid="email-input"
+            onChange={ ({ target }) => setEmail(target.value) }
+            autocorrect="off"
+          />
+          <input
+            type="password"
+            className="inputLogin"
+            name="password"
+            value={ password }
+            placeholder="Digite sua Senha"
+            data-testid="password-input"
+            onChange={ ({ target }) => setPassword(target.value) }
+          />
+          <button
+            type="button"
+            data-testid="login-submit-btn"
+            className="button"
+            disabled={ isDisable }
+            onClick={ handleClick }
+          >
+            Entrar
+          </button>
+          { redirect && <Redirect to="/comidas" />}
+        </form>
+      </div>
     </div>
   );
 }

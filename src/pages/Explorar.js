@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
+import './explorarButtons.css';
 
 function Explorar() {
   const [exploreRecipes, setExploreRecipes] = useState('');
 
   const isFalse = false;
   return (
-    <div>
+    <div className="background__image">
       <Header text="Explorar" search={ isFalse } />
       <div className="container__explore__btn">
         <button

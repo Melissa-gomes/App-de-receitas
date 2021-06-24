@@ -23,8 +23,6 @@ function FoodsArea() {
     fetchArea();
   }, []);
 
-  console.log(areas);
-
   return (
     <div className="select__area">
       <select
@@ -50,7 +48,6 @@ function FoodsArea() {
       </select>
       <CardsFoodsArea selectedArea={ selectedArea } />
     </div>
-
   );
 }
 

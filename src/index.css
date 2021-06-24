@@ -26,124 +26,15 @@ code {
     monospace;
 }
 
-.footer {
-  align-items: center;
-  background: #C4C4C4;
-  bottom: 0px;
-  display: flex;
-  height: 58px;
-  justify-content: space-around;
-  left: 0px;
-  position: fixed;
-  top: 570px;
-  width: 100%;
-}
-
-.drinks__btn {
-  background-image: url('./images/drinkIcon.svg');
-  height: 40px;
-  width: 40px;
-}
-
-.explore__btn {
-  background-image: url('./images/exploreIcon.svg');
-  height: 40px;
-  width: 40px;
-}
-
-.food__btn {
-  background-image: url('./images/mealIcon.svg');
-  height: 40px;
-  width: 40px;
-}
-
-.header {
-  align-items: center;
-  background: #c4c4c4;
-  display: flex;
-  flex-direction: row;
-  height: 58px;
-  justify-content: space-around;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-.header p {
-  color: black;
-  font-family: Roboto, sans-serif;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 35px;
-  margin-top: 10px;
-}
-
-.Container__Category__Btns {
-  display: flex;
-  padding-left: 10px;
-  flex-wrap: wrap;
-  position: absolute;
-  top: 400px;
-  width: 350px;
-  align-items: center;
-  justify-content: center;
-}
-
-.Container__Category__Btns button {
-  padding: 5px;
-  margin: 5px;
-}
-
 .Recomeded__Cards {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  width: 250px;
   height: 250px;
+  width: 250px;
 }
-
 
 .Recipe__Recomended {
-  margin: 8px;
   border: 5px, solid, black;
-}
-
-.Recipes__Start__Btn {
-  position: fixed;
-  width: 95%;
-  height: 76px;
-  bottom: 0;
-  left: 0;
-  background: #6CE34F;
-  margin: 11px;
-  font-family: Roboto, sans-serif;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 35px;
-}
-
-.button-explore {
-  margin-top: 100px;
-  height: 50px;
-}
-
-.container__explore__btn {
-  display: flex;
-  flex-direction: column;
-}
-
-.buttons__profile {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 350px;
-  justify-content: space-between;
-  margin-top: 150px;
-}
-
-.buttons__profile button {
-  height: 60px;
-  width: 300px;
+  margin: 8px;
 }

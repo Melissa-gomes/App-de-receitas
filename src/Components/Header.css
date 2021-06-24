@@ -1,0 +1,38 @@
+.header {
+  align-items: center;
+  background-color: rgb(102, 67, 138);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  height: 65px;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.header p {
+  color: white;
+  font-family: Roboto, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 35px;
+  margin-top: 10px;
+  scrollbar-shadow-color: 50px;
+}
+
+.header a {
+  background-color:rgb(185, 155, 229);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.btn__search {
+  background-color:rgb(185, 155, 229);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  padding: 8px;
+}

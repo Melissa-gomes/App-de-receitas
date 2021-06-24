@@ -5,8 +5,21 @@
 }
 
 .buttons__recipes_favorite button {
-  background-color: green;
+  background-color: rgba(102, 67, 138, 0.8);
+  border: none;
+  border-radius: 10px;
   color: white;
-  min-height: 35px;
-  min-width: 68px;
+  font-size: 20px;
+  height: 42px;
+  margin: 5px;
+  max-width: 102px;
+  width: 102px;
+  word-break: keep-all;
+}
+
+.container__favoriteCards {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+  height: 100%;
+  margin: 10px;
+  width: 350px;
 }

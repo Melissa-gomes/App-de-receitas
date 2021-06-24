@@ -13,6 +13,7 @@ import {
 import shareIcon from '../images/shareIcon.svg';
 import whiteHeartIcon from '../images/whiteHeartIcon.svg';
 import blackHeartIcon from '../images/blackHeartIcon.svg';
+import './DetalhesComidas.css';
 
 function DetalhesComidas({ match: { params: { id } }, history }) {
   const [detailMeal, setDetailMeal] = useState([]);
@@ -35,7 +36,9 @@ function DetalhesComidas({ match: { params: { id } }, history }) {
 
   const zero = 0;
   const six = 6;
-  if (detailMeal && detailMeal.length === zero) return (<h1>Carregando...</h1>);
+  if (detailMeal && detailMeal.length === zero) {
+    return (<div className="loading"><h1>Carregando...</h1></div>);
+  }
 
   const {
     strMealThumb,
@@ -118,43 +121,46 @@ function DetalhesComidas({ match: { params: { id } }, history }) {
   }
 
   return (
-    <div>
+    <div className="details__foods">
       <img
+        className="details__foods__img"
         src={ strMealThumb }
         alt={ strMeal }
         data-testid="recipe-photo"
-        width="200px"
+        
       />
       <h4 data-testid="recipe-title">{ strMeal }</h4>
-      <h6 data-testid="recipe-category">{ strCategory }</h6>
-      <button
-        className="aaaa"
-        data-testid="share-btn"
-        type="button"
-        src={ shareIcon }
-        onClick={ () => setCopyLink(handleClick(history)) }
-      >
-        <img
+      <h6 data-testid="recipe-category"><i>{ strCategory }</i></h6>
+      <div className="div-buttons">
+        <button
+          className="share-btn"
+          data-testid="share-btn"
+          type="button"
           src={ shareIcon }
-          alt="share"
-          width="30px"
-        />
-      </button>
-      {copyLink && <p>Link copiado!</p>}
-      <button
-        className="aaaa"
-        data-testid="favorite-btn"
-        type="button"
-        src={ !isFavorite ? whiteHeartIcon : blackHeartIcon }
-        onClick={ !isFavorite ? favoriteRecipes : allRecipesFavorite }
-      >
-        <img
+          onClick={ () => setCopyLink(handleClick(history)) }
+        >
+          <img
+            src={ shareIcon }
+            alt="share"
+            width="30px"
+          />
+        </button>
+        {copyLink && <p>Link copiado!</p>}
+        <button
+          className="heart-btn"
+          data-testid="favorite-btn"
+          type="button"
           src={ !isFavorite ? whiteHeartIcon : blackHeartIcon }
-          alt="whiteHeart"
-          width="50px"
-        />
-      </button>
-      <h6><b>Ingredientes</b></h6>
+          onClick={ !isFavorite ? favoriteRecipes : allRecipesFavorite }
+        >
+          <img
+            src={ !isFavorite ? whiteHeartIcon : blackHeartIcon }
+            alt="whiteHeart"
+            width="30px"
+          />
+        </button>
+      </div>
+      <h5><b>Ingredients</b></h5>
       <ul>
         {(ingredientsListMeals(detail))
           .map(
@@ -169,17 +175,23 @@ function DetalhesComidas({ match: { params: { id } }, history }) {
           )}
 
       </ul>
-      <h6><b>Instructions</b></h6>
-      <p data-testid="instructions">{ strInstructions }</p>
-      <p data-testid="video">Aqui fica o vídeo do youtube</p>
-      <iframe
-        title="Video"
-        width="420"
-        height="345"
-        src={ `http://www.youtube.com/embed/${stringSplit[1]}?autoplay=1` }
-      />
-      <p>Recomendados</p>
-      <div>
+      <h5><b>Instructions</b></h5>
+      <p
+        data-testid="instructions"
+        className="instructions__detail"
+      >
+        { strInstructions }
+      </p>
+      <div className="iframe__detail">
+        <iframe
+          title="Video"
+          width="320"
+          height="240"
+          src={ `http://www.youtube.com/embed/${stringSplit[1]}?autoplay=1` }
+        />
+      </div>
+      <h5><b>Recomendados</b></h5>
+      <div className="caroussel__detail">
         <Slider { ...settings }>
           { recomendedDrinks
             && recomendedDrinks.map(({ strDrinkThumb, strDrink }, index) => (
@@ -189,7 +201,7 @@ function DetalhesComidas({ match: { params: { id } }, history }) {
                   data-testid={ `${index}-recomendation-card` }
                   src={ strDrinkThumb }
                   alt={ index }
-                  width="50px"
+                  width="140px"
                 />
                 <p data-testid={ `${index}-recomendation-title` }>{ strDrink }</p>
               </div>

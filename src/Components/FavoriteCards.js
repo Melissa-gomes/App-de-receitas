@@ -33,7 +33,7 @@ function FavoriteCard({ favorites }) {
 
   return (
     <div className="container__favoriteCards">
-      { copyLink && <p className="aaaa">Link copiado!</p>}
+      { copyLink && <p><i>Link copiado!</i></p> }
       {favoritesRender && favoritesRender.map(({
         name,
         image,
@@ -49,10 +49,10 @@ function FavoriteCard({ favorites }) {
             href={ `/${type}s/${id}` }
           >
             <img
+              className="image-recipe"
               data-testid={ `${index}-horizontal-image` }
               alt={ name }
               src={ image }
-              width="200px"
             />
           </a>
           <p
@@ -71,33 +71,34 @@ function FavoriteCard({ favorites }) {
               { name }
             </h4>
           </a>
-
-          <button
-            className="aaaa"
-            type="button"
-            data-testid={ `${index}-horizontal-share-btn` }
-            onClick={ () => shareRecipe(id, type) }
-            src={ shareIcon }
-          >
-            <img
-              alt="share"
+          <div className="buttons">
+            <button
+              className="share-btn"
+              type="button"
+              data-testid={ `${index}-horizontal-share-btn` }
+              onClick={ () => shareRecipe(id, type) }
               src={ shareIcon }
-              width="50px"
-            />
-          </button>
-          <button
-            className="aaaa"
-            type="button"
-            data-testid={ `${index}-horizontal-favorite-btn` }
-            onClick={ () => disfavorRecipe(id) }
-            src={ blackHeartIcon }
-          >
-            <img
-              alt="favorite"
+            >
+              <img
+                alt="share"
+                src={ shareIcon }
+                width="20px"
+              />
+            </button>
+            <button
+              className="heart-btn"
+              type="button"
+              data-testid={ `${index}-horizontal-favorite-btn` }
+              onClick={ () => disfavorRecipe(id) }
               src={ blackHeartIcon }
-              width="50px"
-            />
-          </button>
+            >
+              <img
+                alt="favorite"
+                src={ blackHeartIcon }
+                width="20px"
+              />
+            </button>
+          </div>
         </div>
       ))}
     </div>
