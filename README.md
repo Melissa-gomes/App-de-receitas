@@ -30,7 +30,7 @@ O layout foi desenvolvido para dispositivos móveis.
 <h5>Clone o repositorio</h5>
 
 ```
-git clone 
+git clone git@github.com:Melissa-gomes/App-de-receitas.git
 ```
 
 <h5>Entre no diretorio do aplicativo</h5>
