@@ -36,7 +36,7 @@ git clone git@github.com:Melissa-gomes/App-de-receitas.git
 <h5>Entre no diretorio do aplicativo</h5>
 
 ```
-cd aplicativoDeReceitas
+cd App-de-receitas 
 ```
 
 <h5>Instale todas as dependencias</h5>
